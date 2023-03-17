@@ -1,0 +1,10 @@
+variable "num_files" {
+  type    = number
+  default = 3
+}
+
+resource "local_file" "example" {
+  count    = var.num_files
+  filename = "file${count.index}.txt"
+  content  = "This is file ${count.index}."
+}

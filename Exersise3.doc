@@ -1,0 +1,22 @@
+1st step 
+
+FROM nginx
+COPY index.html /usr/share/nginx/html/
+
+2 step
+Then, create a file named index.html in the same directory and add the following content
+<P>Hello World</p>
+
+3rd step
+build the Docker image using the following command
+docker build -t my-nginx-image 
+
+4th step
+
+docker run -p 80:80 my-nginx-image
+
+
+This will start an Nginx container on port 80, and if you navigate to http://localhost in your browser, 
+you should see the "Hello World" message displayed
+
+
